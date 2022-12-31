@@ -1,11 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 
-// every unit will be in rem
-
 const Nav = styled.nav`
   height: 5rem;
-  width: 100%;
+  width: 100vw;
   background: transparent;
   display: flex;
   justify-content: space-between;
@@ -36,7 +34,7 @@ const Nav = styled.nav`
       font-weight: 500;
       letter-spacing: 0.05rem;
       cursor: pointer;
-      color: rgba(var(--primary-color), 0.75);
+      color: rgba(var(--primary-color), 0.835);
       transition: all 0.15s ease;
       font-weight: 600;
       &:hover {

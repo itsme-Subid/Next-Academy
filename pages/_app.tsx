@@ -11,6 +11,7 @@ const GlobalStyle = createGlobalStyle`
   --light-color: 235, 236, 241;
   --dark-color: 13, 14, 18;
   --primary-color: 180, 129, 88;
+  --primary-text-color: 233, 196, 151;
   --primary-gradient-1: 253, 167, 76;
   --secondary-color: 31, 111, 235;
   --secondary-gradient-1: 109, 166, 253;
