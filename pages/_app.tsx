@@ -5,7 +5,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import Router from "next/router";
 import { Suspense, useState } from "react";
-import Loading from "./Loading";
+import Loading from "../components/Loading";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
