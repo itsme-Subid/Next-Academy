@@ -187,7 +187,8 @@ const CourseDetails = styled.div`
       border: 1px solid rgba(var(--white-color), 0.15);
       border-radius: 1rem;
       overflow: hidden;
-      padding: 2.5rem 1.5rem;
+      padding: 1.5rem;
+      padding-top: 2.5rem;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
