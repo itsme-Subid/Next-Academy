@@ -1,8 +1,11 @@
 import type { AppProps } from "next/app";
 import { Inter } from "@next/font/google";
-import styled, { createGlobalStyle } from "styled-components";
+import { createGlobalStyle } from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import Router from "next/router";
+import { Suspense, useState } from "react";
+import Loading from "./Loading";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -12,9 +15,7 @@ const GlobalStyle = createGlobalStyle`
   --dark-color: 13, 14, 18;
   --primary-color: 180, 129, 88;
   --primary-text-color: 233, 196, 151;
-  --primary-gradient-1: 253, 167, 76;
-  --secondary-color: 31, 111, 235;
-  --secondary-gradient-1: 109, 166, 253;
+  --secondary-color: 86, 60, 40;
   --white-color: 255, 255, 255;
 }
 * {
@@ -62,11 +63,20 @@ a {
 `;
 
 export default function App({ Component, pageProps }: AppProps) {
+  const [loading, setLoading] = useState(false);
+  Router.events.on("routeChangeStart", () => {
+    setLoading(true);
+  });
+  Router.events.on("routeChangeComplete", () => {
+    setLoading(false);
+  });
   return (
     <div className={inter.variable}>
       <GlobalStyle />
-      <Header />
-      <Component {...pageProps} />
+      <Suspense fallback={<Loading loading={loading as boolean} />}>
+        <Header />
+        <Component {...pageProps} />
+      </Suspense>
       <Footer />
     </div>
   );

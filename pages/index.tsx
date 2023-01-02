@@ -44,6 +44,9 @@ const Main = styled.main`
     @media (max-width: 60rem) {
       gap: 2rem;
     }
+    @media (max-width: 40rem) {
+      gap: 1rem;
+    }
     & h1 {
       display: flex;
       align-items: center;
@@ -75,6 +78,9 @@ const Main = styled.main`
     gap: 1rem;
     @media (max-width: 60rem) {
       gap: 2rem;
+    }
+    @media (max-width: 40rem) {
+      grid-template-columns: 1fr;
     }
     & section {
       display: flex;
@@ -119,7 +125,7 @@ const Main = styled.main`
   }
   & .teachers {
     position: absolute;
-    bottom: -3rem;
+    bottom: -4rem;
     right: 0;
     padding: 0.5rem 1rem;
     font-size: 1rem;
@@ -129,21 +135,40 @@ const Main = styled.main`
     & span {
       color: rgba(var(--primary-color), 1);
     }
+    @media (max-width: 40rem) {
+      grid-template-columns: 1fr;
+    }
   }
 `;
 
 const Spacer = styled.div`
-  margin-block: 5rem;
-  width: 100%;
-  aspect-ratio: 960 / 300;
+  grid-column: 1 / 3;
+  pointer-events: none;
+  position: absolute;
+  left: -7%;
+  right: 0;
+  bottom: -21rem;
+  width: 115%;
+  aspect-ratio: 960 / 450;
   background: url(${wave.src}) no-repeat center center/cover;
+  @media (max-width: 60rem) {
+    bottom: -15rem;
+  }
 `;
 
 const CourseDetails = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+  margin-block: 20rem;
   padding-block: 5rem;
+  background-color: rgb(var(--primary-color));
+  @media (max-width: 60rem) {
+    margin-block: 15rem;
+  }
+  @media (max-width: 40rem) {
+    margin-block: 14rem;
+  }
   & .courses {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -151,6 +176,9 @@ const CourseDetails = styled.div`
     gap: 2rem;
     @media (max-width: 60rem) {
       grid-template-columns: repeat(2, 1fr);
+    }
+    @media (max-width: 40rem) {
+      grid-template-columns: 1fr;
     }
     & .card {
       width: 100%;
@@ -164,27 +192,33 @@ const CourseDetails = styled.div`
       flex-direction: column;
       justify-content: space-between;
       transition: 0.15s;
-      gap: 1rem;
+      gap: 1.5rem;
       &:hover {
         transform: translateY(-0.5rem);
         box-shadow: rgb(var(--white-color), 0.25) 0 0.25rem 1rem;
       }
-      & h3 {
+      & .upper {
         display: flex;
-        align-items: center;
-        gap: 1rem;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: rgba(var(--primary-color), 1);
-        & svg {
-          font-size: 1.75rem;
+        flex-direction: column;
+        gap: 2rem;
+        & h3 {
+          display: flex;
+          align-items: center;
+          gap: 1rem;
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: rgba(var(--white-color), 1);
+          & svg {
+            font-size: 1.75rem;
+          }
         }
-      }
-      & p {
-        color: rgb(var(--white-color), 0.5);
-        font-size: 0.875rem;
-        font-weight: 400;
-        line-height: 1.25rem;
+        & p {
+          color: rgb(var(--white-color), 0.5);
+          font-size: 0.875rem;
+          font-weight: 400;
+          line-height: 1.25rem;
+          text-align: justify;
+        }
       }
       & button {
         padding: 0.5rem 1rem;
@@ -196,7 +230,7 @@ const CourseDetails = styled.div`
         font-weight: 600;
         letter-spacing: 0.05rem;
         cursor: pointer;
-        transition: 0.15s;
+        transition: color 0.15s;
         &:hover {
           background-color: transparent;
           color: rgb(var(--white-color));
@@ -210,8 +244,8 @@ const CourseDetails = styled.div`
         top: 0;
         right: 0;
         padding: 0.5rem 1rem;
-        background-color: rgb(var(--primary-color));
-        color: rgb(var(--white-color));
+        background-color: rgb(var(--white-color));
+        color: rgb(var(--dark-color));
         font-size: 0.75rem;
         font-weight: 600;
         letter-spacing: 0.05rem;
@@ -266,19 +300,19 @@ export default function Home() {
           </p>
           <p>Address: Baidyabati, Hooghly</p>
         </div>
-        <div className="right courses">
-          {courses.map((course, index) => (
-            <a href="#courses" key={index}>
-              <section>
+        <a href="#courses">
+          <div className="right courses">
+            {courses.map((course, index) => (
+              <section key={index}>
                 <h2>
                   {course.icon}
                   <span>{course.title}</span>
                 </h2>
                 <p>{course.description}</p>
               </section>
-            </a>
-          ))}
-        </div>
+            ))}
+          </div>
+        </a>
         <div className="teachers">
           Courses will be taught by{" "}
           <span>
@@ -289,9 +323,9 @@ export default function Home() {
           </span>{" "}
           and others
         </div>
+        <Spacer />
       </Main>
       <CourseDetails>
-        <Spacer />
         {/* course details in card format */}
         <div className="courses container" id="courses">
           {courses.map((course, index) => (
