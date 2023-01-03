@@ -1,4 +1,13 @@
 # Next Academy
+![](https://raw.githubusercontent.com/itsme-Subid/Next-Academy/main/preview.webp)
+![](https://img.shields.io/github/license/itsme-Subid/Next-Academy?style=for-the-badge)
+![](https://img.shields.io/github/languages/top/itsme-Subid/Next-Academy?style=for-the-badge)
+![](https://img.shields.io/github/languages/count/itsme-Subid/Next-Academy?style=for-the-badge)
+![](https://img.shields.io/github/languages/code-size/itsme-Subid/Next-Academy?style=for-the-badge)
+![](https://img.shields.io/github/repo-size/itsme-Subid/Next-Academy?style=for-the-badge)
+![](https://img.shields.io/github/last-commit/itsme-Subid/Next-Academy?style=for-the-badge)
+![](https://img.shields.io/github/commit-activity/w/itsme-Subid/Next-Academy?style=for-the-badge)
+<br>
 Welcome to the Next Academy repository! This repository is a practice project for my Next.js concepts and CSS skills. It is a beautiful website that is primarily focused on courses for programming enthusiasts.
 
 ## Getting Started
