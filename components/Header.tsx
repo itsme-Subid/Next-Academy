@@ -29,6 +29,9 @@ const Nav = styled.nav`
     display: flex;
     gap: 2rem;
     list-style: none;
+    @media (max-width: 40rem) {
+      gap: 1rem;
+    }
     & li {
       font-size: 1rem;
       font-weight: 500;
@@ -52,7 +55,7 @@ const Header = () => {
   return (
     <>
       <Nav>
-        <h1>Infotech Success Point</h1>
+        <h1>Next Academy</h1>
         <ul>
           <li>Home</li>
           <li>About</li>
