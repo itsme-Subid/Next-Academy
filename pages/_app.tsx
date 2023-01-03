@@ -17,6 +17,7 @@ const GlobalStyle = createGlobalStyle`
   --primary-text-color: 233, 196, 151;
   --secondary-color: 86, 60, 40;
   --white-color: 255, 255, 255;
+  overflow-x: hidden;
 }
 * {
   margin: 0;
