@@ -177,15 +177,9 @@ const CourseDetails = styled.div`
   }
   & .courses {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     place-content: center;
     gap: 2rem;
-    @media (max-width: 60rem) {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    @media (max-width: 40rem) {
-      grid-template-columns: 1fr;
-    }
     & .card {
       width: 100%;
       height: 100%;
