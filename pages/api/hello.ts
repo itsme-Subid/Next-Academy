@@ -1,18 +1,29 @@
-import { readFile } from "fs";
+import { readFile, readdir } from "fs";
 import type { NextApiRequest, NextApiResponse } from "next";
-
-type Data = {
-  name: string;
-};
 
 export default function handler(
   req: NextApiRequest,
-  res: NextApiResponse<Data>
+  res: NextApiResponse<{
+    error?: String;
+    data?: String | String[];
+  }>
 ) {
-  readFile("pages/api/hello.ts", "utf8", (err, data) => {
-    if (!!err) {
-      res.status(500).json({ name: err.message });
-    }
-    res.status(200).json({ name: data });
-  });
+  try {
+    readdir("./courseData", (err, files) => {
+      if (!!err) {
+        res.status(500).json({ error: err.message });
+      } else {
+        res.status(200).json({ data: files });
+      }
+    });
+    // readFile("./courseData/hello.json", "utf8", (err, data) => {
+    //   if (!!err) {
+    //     res.status(500).json({ error: err.message });
+    //   } else {
+    //     res.status(200).json(JSON.parse(data));
+    //   }
+    // });
+  } catch (err: unknown) {
+    res.status(500).json({ error: (err as Error).message });
+  }
 }
