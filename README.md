@@ -1,6 +1,6 @@
 <div align="center">
 
-# Next Academy
+# [Next Academy](https://nextacademy.vercel.app/)
 ![](https://raw.githubusercontent.com/itsme-Subid/Next-Academy/main/preview.webp)
 ![](https://img.shields.io/github/license/itsme-Subid/Next-Academy?style=for-the-badge)
 ![](https://img.shields.io/github/languages/top/itsme-Subid/Next-Academy?style=for-the-badge)
@@ -21,7 +21,7 @@ To clone the repository, you will need to have git installed on your machine. On
 git clone https://github.com/itsme-Subid/Next-Academy.git
 ```
 ### Running the Project
-To run the project, you will need to have Node.js and npm or yarn installed on your machine. Once you have those, you can use the following commands:
+To run the project, you will need to have Node.js and npm or yarn or pnpm installed on your machine. Once you have those, you can use the following commands:
 ```bash
 cd Next-Academy
 npm install
@@ -32,6 +32,12 @@ or, if you are using yarn:
 cd Next-Academy
 yarn
 yarn dev
+```
+or, if you are using pnpm:
+```bash
+cd Next-Academy
+pnpm install
+pnpm dev
 ```
 This will start the development server and you should be able to see the website by visiting http://localhost:3000 in your browser.
 
