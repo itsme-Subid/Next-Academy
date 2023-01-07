@@ -3,8 +3,7 @@ import { Inter } from "@next/font/google";
 import { createGlobalStyle } from "styled-components";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import Router from "next/router";
-import { Suspense, useState } from "react";
+import { Suspense } from "react";
 import Loading from "../components/Loading";
 import Head from "next/head";
 
@@ -65,13 +64,6 @@ a {
 `;
 
 export default function App({ Component, pageProps }: AppProps) {
-  const [loading, setLoading] = useState(false);
-  Router.events.on("routeChangeStart", () => {
-    setLoading(true);
-  });
-  Router.events.on("routeChangeComplete", () => {
-    setLoading(false);
-  });
   return (
     <div className={inter.variable}>
       <Head>
@@ -166,7 +158,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta name="next-head-count" content="26" />
       </Head>
       <GlobalStyle />
-      <Suspense fallback={<Loading loading={loading as boolean} />}>
+      <Suspense fallback={<Loading />}>
         <Header />
         <Component {...pageProps} />
       </Suspense>

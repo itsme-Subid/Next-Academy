@@ -9,7 +9,7 @@ const spinnerAnimation = keyframes`
     }
 `;
 
-const ScrollLoading = styled.div<{ loading: boolean }>`
+const ScrollLoading = styled.div`
   position: fixed;
   top: 0;
   bottom: 0;
@@ -17,9 +17,6 @@ const ScrollLoading = styled.div<{ loading: boolean }>`
   right: 0;
   width: 100%;
   height: 100%;
-  visibility: ${(loading) => (loading ? "visible" : "hidden")};
-  opacity: ${(loading) => (loading ? 1 : 0)};
-  transition: all 0.15s ease;
   display: grid;
   place-content: center;
   z-index: 10;
@@ -35,9 +32,9 @@ const ScrollLoading = styled.div<{ loading: boolean }>`
   }
 `;
 
-export default function Loading({ loading }: { loading: boolean }) {
+export default function Loading() {
   return (
-    <ScrollLoading loading={loading}>
+    <ScrollLoading>
       <span></span>
     </ScrollLoading>
   );
