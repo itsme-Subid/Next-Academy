@@ -84,7 +84,7 @@ export default function App({ Component, pageProps }: AppProps) {
         />
         <meta
           name="description"
-          content="Next-Academy by Subid using next.js which is a simple website for learning programming."
+          content="Next-Academy by Subid using next.js which is a simple website offers courses for learning programming."
         />
         <meta
           name="google-site-verification"
@@ -139,7 +139,7 @@ export default function App({ Component, pageProps }: AppProps) {
         <meta property="og:title" content="Next-Academy by itsme-Subid" />
         <meta
           property="og:description"
-          content="Next-Academy by Subid using next.js"
+          content="Next-Academy by Subid using next.js which is a simple website offers courses for learning programming."
         />
         <meta
           property="og:image"
