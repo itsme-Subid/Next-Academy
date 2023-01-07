@@ -6,6 +6,7 @@ import Footer from "../components/Footer";
 import Router from "next/router";
 import { Suspense, useState } from "react";
 import Loading from "../components/Loading";
+import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
@@ -73,6 +74,97 @@ export default function App({ Component, pageProps }: AppProps) {
   });
   return (
     <div className={inter.variable}>
+      <Head>
+        <title>Next Academy</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta
+          name="robots"
+          content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1"
+        />
+        <meta
+          name="description"
+          content="Next-Academy by Subid using next.js which is a simple website for learning programming."
+        />
+        <meta
+          name="google-site-verification"
+          content="aUOx7BZBGMEAbtDsLf9bN1BvycMZwahF4zDqu0EtQCw"
+        />
+        <link rel="canonical" href="https://nextacademy.vercel.app/" />
+        <script type="application/ld+json">
+          {`
+      {
+        "@context": "https://schema.org",
+        "@graph": [
+          {
+            "@type": "Developer",
+            "@id": "https://nextacademy.vercel.app/",
+            "name": "itsme-Subid | Subid Das",
+            "url": "https://nextacademy.vercel.app/",
+            "sameAs": [
+              "https://www.instagram.com/itsme_subid/",
+              "https://twitter.com/ItsmeSubid"
+            ],
+            "logo": {
+              "@type": "ImageObject",
+              "@id": "https://nextacademy.vercel.app/",
+              "inLanguage": "en-US",
+              "url": "https://raw.githubusercontent.com/itsme-Subid/Next-Academy/main/preview.webp",
+              "contentUrl": "https://raw.githubusercontent.com/itsme-Subid/Next-Academy/main/preview.webp",
+              "width": 782,
+              "height": 782,
+              "caption": "itsme-Subid"
+            },
+            "image": { "@id": "https://nextacademy.vercel.app/" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://nextacademy.vercel.app/",
+            "url": "https://nextacademy.vercel.app/",
+            "name": "Next-Academy | itsme-Subid",
+            "isPartOf": {
+              "@id": "https://nextacademy.vercel.app/"
+            },
+            "about": { "@id": "https://nextacademy.vercel.app/" },
+            "description": "Next-Academy by Subid using next.js",
+            "inLanguage": "en-US"
+          }
+        ]
+      }
+      `}
+        </script>
+        <meta property="og:type" content="website" />
+        <meta property="og:site_name" content="Next-Academy" />
+        <meta property="og:url" content="https://nextacademy.vercel.app/" />
+        <meta property="og:title" content="Next-Academy by itsme-Subid" />
+        <meta
+          property="og:description"
+          content="Next-Academy by Subid using next.js"
+        />
+        <meta
+          property="og:image"
+          content="https://raw.githubusercontent.com/itsme-Subid/Next-Academy/main/preview.webp"
+        />
+        <meta property="og:locale" content="en_US" />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:url"
+          content="https://nextacademy.vercel.app/"
+        />
+        <meta property="twitter:title" content="Next-Academy | itsme-Subid" />
+        <meta
+          property="twitter:description"
+          content="Next-Academy by Subid using next.js"
+        />
+        <meta
+          property="twitter:image"
+          content="https://raw.githubusercontent.com/itsme-Subid/Next-Academy/main/preview.webp"
+        />
+        <meta name="twitter:site" content="@itsme-Subid" />
+        <meta name="twitter:creator" content="@itsme-Subid" />
+        <meta name="theme-color" content="#0d1117" />
+        <meta name="next-head-count" content="26" />
+      </Head>
       <GlobalStyle />
       <Suspense fallback={<Loading loading={loading as boolean} />}>
         <Header />
