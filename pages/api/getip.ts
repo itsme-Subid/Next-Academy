@@ -1,4 +1,3 @@
-// only allow requests from http://localhost:5173 and only allow POST requests
 import { NextApiRequest, NextApiResponse } from "next";
 import requestIp from "request-ip";
 
